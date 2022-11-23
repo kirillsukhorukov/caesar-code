@@ -33,14 +33,15 @@ std::string decrypt_caesar(std::string str_Decrypt, int s)
 }
 int main() {
     std::cout << "------------Caesar Code------------\n" << std::endl;
-//  while (true)
-//  {
+    while (true)
+    {
         std::string text;
-        std::cout << "Enter your message please: ";
+        std::cout << "Enter your message: ";
+        std::cin.ignore();
         std::getline(std::cin, text);
 
         int bias;
-        std::cout << "Enter code: ";
+        std::cout << "Enter key: ";
         std::cin >> bias;
         bias = bias%26;
 
@@ -60,5 +61,5 @@ int main() {
         {
             std::cout <<"Operation input error!" << std::endl;
         }
-//  }
+    }
 }
