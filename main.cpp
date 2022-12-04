@@ -7,7 +7,7 @@ char symbol (char sym, char begin, int s)
     return char (index);
 }
 
-std::string encrypt_caesar(std::string str_Encrypt, int s)
+std::string encrypt_caesar(const std::string &str_Encrypt, int s)
 {
     std::string result;
     for (int i=0; i <= str_Encrypt.length(); i++)
@@ -27,7 +27,7 @@ std::string encrypt_caesar(std::string str_Encrypt, int s)
     return result;
 }
 
-std::string decrypt_caesar(std::string str_Decrypt, int s)
+std::string decrypt_caesar(const std::string &str_Decrypt, int s)
 {
     return encrypt_caesar(str_Decrypt, -s);
 }
@@ -39,6 +39,11 @@ int main() {
         std::cout << "Enter your message: ";
         std::cin.ignore();
         std::getline(std::cin, text);
+
+        if (text == "Q")
+        {
+            break;
+        }
 
         int bias;
         std::cout << "Enter key: ";
